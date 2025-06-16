@@ -1,0 +1,6 @@
+.about {
+  & span.overline {
+    font: var(--overline);
+    text-transform: uppercase;
+  }
+}
