@@ -1,0 +1,60 @@
+.style {
+  width: 176px;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    & label {
+      margin: 0;
+      font: var(--paragraph-sm);
+    }
+
+  }
+}
+
+.toggle-inner {
+  position: relative;
+
+  background: var(--content-tertiary);
+  border: 0;
+
+  width: 30px;
+  height: 20px;
+
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  & input {
+    all: unset;
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+  }
+
+  .switch {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--content-primary);
+
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 4px;
+
+    transition: all 0.465s ease-in-out;
+  }
+
+  & input:checked + .switch {
+    left: calc(100% - 18px);
+  }
+
+  &:has(input:checked) {
+    background: linear-gradient(to right, var(--gradient-background));
+  }
+}

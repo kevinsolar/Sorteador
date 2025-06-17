@@ -1,4 +1,20 @@
-.input-container {
+@import url(toggle.css);
+
+fieldset {
+	border: 0;
+
+	& label {
+		& h2 {
+			font: var(--label-lg);
+		}
+    & p {
+      font: var(--paragraph-lg);
+      color: var(--content-secondary);
+    }
+	}
+}
+
+.input-wrapper {
 	position: relative;
 	width: 86px;
 	height: 56px;
@@ -12,12 +28,12 @@
 			var(--gradient-border)
 		);
 		border-radius: 0.5rem;
-		animation: rotation 3s linear infinite;
+		animation: rotation 2s linear infinite;
 		z-index: 1;
 	}
 
 	&:has(input:focus)::before,
-  &:has(input:hover)::before {
+	&:has(input:hover)::before {
 		inset: -2px;
 	}
 
@@ -30,7 +46,7 @@
 			var(--gradient-border)
 		);
 		border-radius: 0.5rem;
-		animation: rotation 3s linear infinite;
+		animation: rotation 2s linear infinite;
 		filter: blur(0.5rem);
 		opacity: 0;
 		z-index: 0;
@@ -38,7 +54,14 @@
 
 	&:has(input:focus)::after {
 		inset: -1px;
+		opacity: 0.5;
 	}
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 input {
@@ -59,6 +82,45 @@ input {
 	&:focus {
 		border: 0;
 		outline: 0;
+	}
+}
+
+.button-wrapper {
+	width: 100%;
+	height: 56px;
+
+	padding: 2px;
+	border-radius: 8px;
+
+	background: var(--background-tertiary);
+
+	transition: background 0.2s ease;
+
+	&:hover {
+		background: conic-gradient(
+			from var(--gradient-angle),
+			var(--gradient-border)
+		);
+
+		animation: rotation 2s linear infinite;
+	}
+
+	& button {
+		appearance: none;
+		border: 0;
+		font: var(--label-lg);
+
+		width: 100%;
+		height: 100%;
+
+		color: var(--content-primary);
+		background-color: var(--background-tertiary);
+		border-radius: inherit;
+
+		transition: background 0.3s ease;
+	}
+	&:hover button {
+		background-color: var(--background-secondary);
 	}
 }
 

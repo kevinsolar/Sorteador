@@ -1,6 +1,43 @@
+main {
+	min-height: 100vh;
+
+	& > .grid {
+		width: 100%;
+	}
+}
+
 .about {
-  & span.overline {
-    font: var(--overline);
-    text-transform: uppercase;
-  }
+	& .title {
+		& .overline {
+			font: var(--overline);
+			text-transform: uppercase;
+			color: var(--content-tertiary);
+		}
+		& h1 {
+			font: var(--display-lg);
+		}
+	}
+}
+
+.content {
+	& .text {
+		& p {
+			color: var(--content-secondary);
+			font: var(--paragraph-sm);
+		}
+		& .md {
+			color: var(--content-brand);
+			font: var(--paragraph-md);
+		}
+	}
+}
+
+@media (max-width: 1000px) {
+	.about {
+		& .title {
+			& h1 {
+				font: var(--display-md);
+			}
+		}
+	}
 }
