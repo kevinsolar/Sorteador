@@ -124,6 +124,12 @@ input {
 	}
 }
 
+@media (max-width: 1100px) {
+  .inputs-group {
+    justify-content: center;
+  }
+}
+
 @property --gradient-angle {
 	syntax: "<angle>";
 	initial-value: 0deg;

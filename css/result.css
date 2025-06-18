@@ -1,23 +1,180 @@
 #result {
-  & .number {
-    width: 84px;
-    height: 84px;
-
-    position: relative;
-
-    & .bg {
-      width: 100%;
-      height: 100%;
-
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-
-      background: var(--content-brand);
-    }
-
-    & span {
-      font: var(--numbers);
-    } 
+  & .title {
+    text-align: center;
   }
+
+	& .number {
+		width: 100px;
+		height: 100px;
+
+		position: relative;
+
+		& .bg {
+			width: 100%;
+			height: 100%;
+
+			border-radius: 28px;
+			position: absolute;
+			inset: 0;
+			z-index: 1;
+
+			background: var(--content-brand);
+			animation: rotate 5s linear forwards;
+		}
+
+		& span {
+			position: absolute;
+			z-index: 3;
+
+			color: transparent;
+			font: var(--numbers);
+
+			opacity: 1;
+
+			animation: numberColor 5s ease forwards;
+		}
+	}
+
+  & .content-number {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+
+    justify-content: center;
+  }
+
+	& button {
+		all: unset;
+		cursor: pointer;
+
+		width: 100%;
+		height: 56px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+
+    font: var(--label-lg);
+    text-transform: uppercase;
+
+		border-radius: 0.5rem;
+
+		background: var(--background-tertiary);
+
+		position: relative;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+
+			border-radius: 0.5rem;
+
+			background: conic-gradient(
+				from var(--gradient-angle),
+				var(--gradient-border)
+			);
+
+			inset: 0;
+			z-index: -1;
+
+			visibility: hidden;
+
+			animation: rotation 2s linear infinite;
+		}
+		&::after {
+			filter: blur(0.5rem);
+			opacity: 0;
+		}
+
+		&:hover::before,
+		&:hover::after {
+			visibility: visible;
+
+			inset: -1px;
+		}
+		&:hover::after {
+			opacity: 1;
+		}
+		&:focus::before {
+			inset: -2px;
+		}
+
+		& svg .outside {
+			transform-origin: center;
+		}
+
+		&:hover svg .outside {
+			animation: rotate360 2.5s linear infinite forwards;
+		}
+	}
+
+}
+
+@keyframes numberColor {
+	45%,
+	91.63% {
+		color: var(--color-inverse);
+		opacity: 1;
+	}
+	91.64%,
+	100% {
+		color: var(--content-brand);
+		opacity: 1;
+	}
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0);
+	}
+	8.33% {
+		transform: rotate(18deg);
+	}
+	16.66% {
+		transform: rotate(36deg);
+	}
+	24.99% {
+		transform: rotate(54deg);
+	}
+	33.32% {
+		transform: rotate(72deg);
+	}
+	41.65% {
+		transform: rotate(90deg);
+	}
+	49.98% {
+		transform: rotate(108deg);
+	}
+	58.31% {
+		transform: rotate(126deg);
+	}
+	66.64% {
+		transform: rotate(144deg);
+	}
+	74.97% {
+		transform: rotate(162deg);
+	}
+	83.3% {
+		transform: rotate(180deg);
+		opacity: 1;
+	}
+	91.63% {
+		transform: rotate(180deg);
+		opacity: 0.675;
+	}
+	100% {
+		transform: rotate(180deg);
+		opacity: 0;
+	}
+}
+
+@keyframes rotate360 {
+	from {
+		rotate: 0;
+	}
+	to {
+		rotate: 360deg;
+	}
 }

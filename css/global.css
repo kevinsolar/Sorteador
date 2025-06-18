@@ -30,27 +30,44 @@
 	--display-lg: 800 4.5rem/1.3 var(--font-sora);
 	--display-md: 800 2.5rem/1.3 var(--font-sora);
 	--display-sm: 700 2rem/1.3 var(--font-sora);
-  --overline: 800 1rem/1.5 var(--font-roboto-mono);
-  --numbers: 700 3rem/1.5 var(--font-roboto-mono);
-  --paragraph-lg: 500 1rem/1.5 var(--font-roboto-flex);
-  --paragraph-md: 500 0.875rem/1.5 var(--font-roboto-flex);
-  --paragraph-sm: 500 0.75rem/1.5 var(--font-roboto-flex); 
-  --label-lg: 700 1.25rem/1.5 var(--font-roboto-flex);
-  --label: 700 1rem/1.5 var(--font-roboto-flex);
+	--overline: 800 1rem/1.5 var(--font-roboto-mono);
+	--numbers: 700 3rem/1.5 var(--font-roboto-mono);
+	--paragraph-lg: 500 1rem/1.5 var(--font-roboto-flex);
+	--paragraph-md: 500 0.875rem/1.5 var(--font-roboto-flex);
+	--paragraph-sm: 500 0.75rem/1.5 var(--font-roboto-flex);
+	--label-lg: 700 1.25rem/1.5 var(--font-roboto-flex);
+	--label: 700 1rem/1.5 var(--font-roboto-flex);
 }
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 body {
-  background-color: var(--background-primary);
-  color: var(--content-primary);
-  font: var(--paragraph-lg);
+	background-color: var(--background-primary);
 
-  overflow: hidden;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	color: var(--content-primary);
+	font: var(--paragraph-lg);
+
+  position: relative;
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		inset: 0;
+		background-image: url(/assets/background.png);
+		width: 100%;
+		height: 100%;
+		opacity: 0.35;
+		z-index: -1;
+	}
 }
 
 h1,
@@ -62,26 +79,12 @@ h6 {
 	text-transform: uppercase;
 }
 
-.logo {
-  position: fixed;
-  left: 20%;
-  top: 4.5rem;
-
-  display: flex;
-  align-items: center;
-  gap: .675rem;
-
-  & span {
-    color: var(--content-primary);
-    text-transform: uppercase;
-    font: 800 1.5rem/1.3 var(--font-sora);
-    letter-spacing: -4%;
-  }
-}
-
 @media (max-width: 1000px) {
-  body {
-    overflow-x: hidden;
-    width: 100%;
-  }
+	body {
+		overflow: visible;
+		overflow-x: hidden;
+
+		background-size: 300%;
+		background-repeat: repeat;
+	}
 }
