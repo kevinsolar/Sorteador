@@ -10,4 +10,4 @@
 
 Esse projeto foi desenvolvido como um desafio da curso **FullStack** da Rocketseat, conseguindo assim colocar em pratica tudo que aprendemos no curso.
 
-> Feito com muita didicação por Kevin Solar, layout by Rocketseat
+> Feito com muita dedicação por Kevin Solar, layout by Rocketseat
