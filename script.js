@@ -3,6 +3,7 @@ const inputNumbers = document.getElementById("numbers")
 const inputFrom = document.getElementById("from")
 const inputTo = document.getElementById("to")
 const faqMobile = document.querySelector(".mobile-only.faq")
+const noRepeat = document.getElementById("repeat")
 
 let drawnNumbers = []
 
@@ -16,27 +17,50 @@ inputNumbers.oninput = () => {
 form.onsubmit = (e) => {
 	e.preventDefault()
 
-  // loop para adicionar a quantidade de numeros que foi pedido pelo input para uma lista, que contera o(s) numero(s) aleatorios
-	for (let i = 0; i < inputNumbers.value; i++) {
-		drawnNumbers.push(drawnNumber(inputFrom.value, inputTo.value))
+  // nao deixa a quantiade ser 0
+  inputNumbers.value = Number(inputNumbers.value) < 1 ? 1 : inputNumbers.value
+
+	if (inputFrom.value >= inputTo.value) {
+    console.log("escolha valores distantes")
+    return
+  }
+
+	// previne um loop infinito em caso de que a qauntidade de numeros for maior que o range entre o valor menor(inputFrom) e valor maior(inputTo)
+	const maxPossible = inputTo - inputFrom + 1
+	if (inputNumbers > maxPossible) return
+
+	// Gerar números
+	if (noRepeat.checked) {
+		// Números únicos - usar while em vez de for
+		while (drawnNumbers.length < inputNumbers.value) {
+			let number = drawnNumber(inputFrom.value, inputTo.value)
+			if (!drawnNumbers.includes(number)) {
+				drawnNumbers.push(number)
+			}
+		}
+	} else {
+		// Números podem repetir
+		for (let i = 0; i < inputNumbers.value; i++) {
+			drawnNumbers.push(drawnNumber(inputFrom.value, inputTo.value))
+		}
 	}
 
-  // reseta e remove o form
+	// reseta e remove o form
 	form.reset()
 	form.remove()
 
-  faqMobile.remove()
+	faqMobile.remove()
 
-  // cria a secao de resultado com a funcao de criacao
+	// cria a secao de resultado com a funcao de criacao
 	resultSection()
 
-  // adiciona os numeros da lista ja com a estilizacao da funcao
+	// adiciona os numeros da lista ja com a estilizacao da funcao
 	drawnNumbers.map((number) => {
 		theResult(number)
 	})
 
-  // adiciona o botao de jogar novamente com a funcao de reload
-  drawnAgain()
+	// adiciona o botao de jogar novamente com a funcao de reload
+	drawnAgain()
 }
 
 // sorteia os numeros
@@ -115,10 +139,10 @@ const drawnAgain = () => {
 						</svg>
   `
 
-  const result = document.getElementById("result")
-  result.append(button)
+	const result = document.getElementById("result")
+	result.append(button)
 
-  button.onclick = () => {
-    window.location.reload()
-  }
+	button.onclick = () => {
+		window.location.reload()
+	}
 }

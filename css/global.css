@@ -62,7 +62,7 @@ body {
 		display: block;
 		position: absolute;
 		inset: 0;
-		background-image: url(/assets/background.png);
+		background-image: url(../assets/background.png);
 		width: 100%;
 		height: 100%;
 		opacity: 0.35;
@@ -79,10 +79,8 @@ h6 {
 	text-transform: uppercase;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1180px) {
 	body {
-		overflow: visible;
-		overflow-x: hidden;
 
 		background-size: 300%;
 		background-repeat: repeat;

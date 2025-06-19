@@ -11,14 +11,16 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="css/index.css" />
-    <link rel="shortcut icon" href="assets/logo.svg" type="image/svg">
+		<link rel="shortcut icon" href="assets/logo.svg" type="image/svg" />
 	</head>
 	<body>
 		<header class="container">
-			<div class="logo">
-				<img src="assets/logo.svg" alt="Sorteador" />
-				<span>d_numbers</span>
-			</div>
+			<a href="/">
+				<div class="logo">
+					<img src="assets/logo.svg" alt="Sorteador" />
+					<span>d_numbers</span>
+				</div>
+			</a>
 		</header>
 
 		<main class="container flex align-center">
@@ -73,14 +75,24 @@
 
 						<div class="inputs-group grid gap-1_25">
 							<div class="inputs-container flex gap-0_75">
-								<div class="input-wrapper">
-									<input type="number" name="numbers" id="numbers" required />
+								<div class="block grid gap-0_5">
+									<label for="numbers">números</label>
+									<div class="input-wrapper">
+										<input type="number" name="numbers" id="numbers" required />
+									</div>
 								</div>
-								<div class="input-wrapper">
-									<input type="number" name="from" id="from" required />
+
+								<div class="block grid gap-0_5">
+									<label for="from">de</label>
+									<div class="input-wrapper">
+										<input type="number" name="from" id="from" required />
+									</div>
 								</div>
-								<div class="input-wrapper">
-									<input type="number" name="to" id="to" required />
+								<div class="block grid gap-0_5">
+									<label for="to">até</label>
+									<div class="input-wrapper">
+										<input type="number" name="to" id="to" required />
+									</div>
 								</div>
 							</div>
 
