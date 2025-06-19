@@ -1,6 +1,6 @@
 # D_NUMBERS - Um sorteador de números divertido e dinamico
 
-(https://raw.githubusercontent.com/kevinsolar/Sorteador/refs/heads/main/screenshot.jpeg)
+![project print](https://raw.githubusercontent.com/kevinsolar/Sorteador/refs/heads/main/screenshot.jpeg)
 
 ## Este projeto utiliza:
 
