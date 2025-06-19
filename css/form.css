@@ -108,6 +108,7 @@ input {
 	& button {
 		appearance: none;
 		border: 0;
+    cursor: pointer;
 		font: var(--label-lg);
 
 		width: 100%;
