@@ -7,10 +7,10 @@ fieldset {
 		& h2 {
 			font: var(--label-lg);
 		}
-    & p {
-      font: var(--paragraph-lg);
-      color: var(--content-secondary);
-    }
+		& p {
+			font: var(--paragraph-lg);
+			color: var(--content-secondary);
+		}
 	}
 }
 
@@ -125,9 +125,9 @@ input {
 }
 
 @media (max-width: 1100px) {
-  .inputs-group {
-    justify-content: center;
-  }
+	.inputs-group {
+		justify-content: center;
+	}
 }
 
 @property --gradient-angle {

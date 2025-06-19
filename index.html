@@ -11,6 +11,7 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="css/index.css" />
+    <link rel="shortcut icon" href="assets/logo.svg" type="image/svg">
 	</head>
 	<body>
 		<header class="container">
@@ -73,24 +74,24 @@
 						<div class="inputs-group grid gap-1_25">
 							<div class="inputs-container flex gap-0_75">
 								<div class="input-wrapper">
-									<input type="number" name="numbers" id="numbers" />
+									<input type="number" name="numbers" id="numbers" required />
 								</div>
 								<div class="input-wrapper">
-									<input type="number" name="from" id="from" />
+									<input type="number" name="from" id="from" required />
 								</div>
 								<div class="input-wrapper">
-									<input type="number" name="to" id="to" />
+									<input type="number" name="to" id="to" required />
 								</div>
 							</div>
 
 							<div class="style">
 								<div class="wrapper">
 									<div class="toggle-inner">
-										<input type="checkbox" id="style-toggle" name="style" />
+										<input type="checkbox" id="repeat" name="repeat" />
 										<div class="switch"></div>
 									</div>
 
-									<label for="style-toggle" class="repeat-numbers"
+									<label for="repeat" class="repeat-numbers"
 										>Não repetir número</label
 									>
 								</div>
@@ -106,7 +107,7 @@
 					</fieldset>
 				</form>
 
-				<div class="mobile-only">
+				<div class="mobile-only faq">
 					<div class="content grid gap-2">
 						<div class="info flex gap-0_5">
 							<div class="icon">
